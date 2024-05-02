@@ -196,4 +196,24 @@ mainwindow = Login()
 mainwindow.show()
 app.exec()
 
+----------------------------------------------------------------------------------------------------------------------------------
+import numpy as np
+import cv2
+import matplotlib.pyplot as plt
+from skimage import io,measure
+from skimage.color import label2rgb
+from scipy import ndimage as nd
+img = io.imread("C:/Users/TOLIPTSET/OneDrive - CubeV3/Desktop/To Delete Python Data/deadmau5.jpg")
+plt.imshow(img)
+hsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
+mask = cv2.inRange(hsv,(100,90,90),(120,255,255))
+smooth_mask = nd.binary_closing(mask,np.ones((7,7)))
+label_measure = measure.label(smooth_mask)
+final_image = label2rgb(label_measure, image=img)
+plt.imshow(final_image)
+
+
+
 ----------------------------------------------------------------------------------------------------------------------------
+
+
