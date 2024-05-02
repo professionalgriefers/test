@@ -1,7 +1,7 @@
 1.	Pre-Processing 
 from pandas import read_csv from numpy import set_printoptions from sklearn import preprocessing 
  
-dataframe = read_csv("ftp://10.10.211.61/IOT KAB/pima-indians-diabetes.csv") array = dataframe.values 
+dataframe = read_csv("") array = dataframe.values 
 datascaling = preprocessing.MinMaxScaler(feature_range=(0, 1)) datascaled = datascaling.fit_transform(array) set_printoptions(precision=2) 
 print("\nScaled data:\n", datascaled[0:3]) print(dataframe.head(3)) 
  
@@ -15,7 +15,7 @@ print("\nScaled data:\n", datascaled[0:3]) print(dataframe.head(3))
 from pandas import read_csv from numpy import set_printoptions from sklearn import preprocessing 
 from sklearn.preprocessing import Normalizer 
  
-dataframe = read_csv("ftp://10.10.211.61/IOT KAB/pima-indians-diabetes.csv") array = dataframe.values datanormal = Normalizer(norm="l2") 
+dataframe = read_csv("") array = dataframe.values datanormal = Normalizer(norm="l2") 
 datascaling = preprocessing.MinMaxScaler(feature_range=(0, 1)) datanormed = datanormal.fit_transform(array) set_printoptions(precision=2) 
 print("\nScaled data:\n", datanormed[0:3]) print(dataframe.head(3)) 
  
@@ -23,19 +23,19 @@ print("\nScaled data:\n", datanormed[0:3]) print(dataframe.head(3))
 from pandas import read_csv from numpy import set_printoptions from sklearn import preprocessing 
 from sklearn.preprocessing import Binarizer 
  
-dataframe = read_csv("ftp://10.10.211.61/IOT KAB/pima-indians-diabetes.csv") array = dataframe.values databin = Binarizer(threshold=0.6) databined = databin.fit_transform(array) set_printoptions(precision=2) 
+dataframe = read_csv("") array = dataframe.values databin = Binarizer(threshold=0.6) databined = databin.fit_transform(array) set_printoptions(precision=2) 
 print("\nScaled data:\n", databined[0:3]) print(dataframe.head(3)) 
  
 4.	Standardization 
 from pandas import read_csv from numpy import set_printoptions from sklearn import preprocessing 
 from sklearn.preprocessing import StandardScaler 
- dataframe = read_csv("ftp://10.10.211.61/IOT KAB/pima-indians-diabetes.csv") array = dataframe.values 
+ dataframe = read_csv("") array = dataframe.values 
 datast = StandardScaler().fit(array) datascaled = datast.fit_transform(array) set_printoptions(precision=2) 
 print("\nScaled data:\n", datascaled[0:3]) print(dataframe.head(3)) 
  
 ----------------------------------------------------------------------------------------------------------------------
 import pandas as pd import plotly.express as px import dash from dash import dcc from dash import html 
-from dash.dependencies import Output,Input df = pd.read_csv("C:/Users/IOT/Desktop/vgsales.csv") print(df.Genre.unique()) print(df.Genre.nunique()) 
+from dash.dependencies import Output,Input df = pd.read_csv("") print(df.Genre.unique()) print(df.Genre.nunique()) 
 fig_pie = px.pie(df,names = 'Genre',values = 'NA_Sales') 
 #fig_pie.show() 
 fig_bar = px.bar(df,x = 'Genre',y = 'NA_Sales') 
@@ -80,13 +80,13 @@ plt.show()
 ----------------------------------------------------------------------------------------------------------------------------
 
 import cv2
-img = cv2.imread('C:/Users/TOLIPTSET/OneDrive - CubeV3/Desktop/To Delete Python Data/deadmau5.jpg')
+img = cv2.imread('')
 img_rgb = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
 img_gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 cv2.imshow('Original Image', img)
 cv2.imshow('Another Image', img_rgb)
 cv2.imshow('blacky', img_gray)
-cascade = cv2.CascadeClassifier("C:/Users/TOLIPTSET/OneDrive - CubeV3/Desktop/To Delete Python Data/haarcascade_frontalface_default.xml")
+cascade = cv2.CascadeClassifier("")
 faces = cascade.detectMultiScale(image=img, scaleFactor=1.1, minNeighbors=2)
 for x,y,w,h in faces:
     img_green = cv2.rectangle(img, (x,y),(x+h,y+w),(0,255,0),2)
@@ -103,7 +103,7 @@ cv2.waitKey(0)
 import pandas as pd
 import matplotlib.pyplot as plt
 
-data = pd.read_csv("C:/Users/TOLIPTSET/OneDrive - CubeV3/Desktop/To Delete Python Data/creditcard.csv")
+data = pd.read_csv("")
 
 normal = data[data['Class'] == 0]
 fraud = data[data['Class'] == 1]
